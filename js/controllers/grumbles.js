@@ -14,6 +14,11 @@
         $location.path("/grumbles");
       });
     };
+    this.createComment = function(){
+      Comment.save(this.comment, function(comment){
+        $location.path("/grumbles/grumble_id/comments/" + this.comment.id);
+      });
+    };
   }]);
 
   // new form controller (handles creation)
